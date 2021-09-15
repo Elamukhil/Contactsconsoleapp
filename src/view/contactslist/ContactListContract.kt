@@ -13,14 +13,14 @@ interface ContactListContract {
 
         abstract suspend fun getFavouriteContacts()
 
-        abstract suspend fun getContactDetail(i: Int)
+        abstract suspend fun getContactDetail(position : Int)
 
         abstract suspend fun addContact(contact : Contacts)
 
-        abstract suspend fun deleteContact(i: Int)
+        abstract suspend fun deleteContact(position: Int)
 
-        abstract suspend fun editContact(i: Int,modified : String,editposition :Int)
+        abstract suspend fun editContact(position: Int,modified : String,editposition :Int)
 
-        abstract suspend fun favouriteContact(selection: Boolean,i :Int)
+        abstract suspend fun favouriteContact(selection: Boolean,position: Int)
     }
 }

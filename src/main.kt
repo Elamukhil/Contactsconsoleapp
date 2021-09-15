@@ -35,20 +35,20 @@ suspend fun main(args: Array<String>) {
                 if (input2 == 1) {
                     println("Enter the name")
                     input3 = readLine()
-                    presenter?.editContact(input - 1, input3!!, 1)
+                    presenter.editContact(input - 1, input3!!, 1)
                 } else if (input2 == 2) {
                     println("Enter the Address")
                     input3 = readLine()
-                    presenter?.editContact(input - 1, input3!!, 2)
+                    presenter.editContact(input - 1, input3!!, 2)
                 } else if (input2 == 3) {
                     println("Enter the Email")
                     input3 = readLine()
-                    presenter?.editContact(input - 1, input3!!, 3)
+                    presenter.editContact(input - 1, input3!!, 3)
                 }
                 if (input2 == 4) {
                     println("Enter the Phone number")
                     input3 = readLine()
-                    presenter?.editContact(input - 1, input3!!, 4)
+                    presenter.editContact(input - 1, input3!!, 4)
                 }
             }
                 if(input1==4)

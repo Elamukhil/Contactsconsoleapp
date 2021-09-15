@@ -5,11 +5,11 @@ import domain.base.Result
 import domain.base.UseCase
 
 class DeleteContact :  UseCase<DeleteContact.RequestValue, DeleteContact.ResponseValue, ErrorValue>() {
-    data class RequestValue(val selection: Int) : UseCase.RequestValue
+    data class RequestValue(val position: Int) : UseCase.RequestValue
     object ResponseValue : UseCase.ResponseValue
 
     override suspend fun executeUseCase(requestValues: RequestValue): Result<ResponseValue, ErrorValue> {
-        data.Contactsdata.deleteContact(requestValues.selection)
+        data.Contactsdata.deleteContact(requestValues.position)
         return Result.Success(ResponseValue)
     }
 

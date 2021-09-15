@@ -26,8 +26,8 @@ class ContactListPresenter(val handler: UseCaseHandler, val useCases: ContactLis
         }
 
     }
-    override suspend fun getContactDetail(i: Int) {
-            val result = handler.executeNow(useCases.getContactDetail, GetContactDetail.RequestValue(i))
+    override suspend fun getContactDetail(position: Int) {
+            val result = handler.executeNow(useCases.getContactDetail, GetContactDetail.RequestValue(position))
             if (result is Result.Success) {
                 Printer.printContact(result.data.result)
             }
@@ -37,16 +37,16 @@ class ContactListPresenter(val handler: UseCaseHandler, val useCases: ContactLis
          handler.executeNow(useCases.addContact, AddContact.RequestValue(contact))
     }
 
-    override suspend fun deleteContact(i : Int) {
-        handler.executeNow(useCases.deleteContact, DeleteContact.RequestValue(i))
+    override suspend fun deleteContact(position: Int) {
+        handler.executeNow(useCases.deleteContact, DeleteContact.RequestValue(position))
     }
 
-    override suspend fun editContact(i: Int,modified : String,editposition :Int) {
-        handler.executeNow(useCases.editContact, EditContact.RequestValue(i,modified,editposition))
+    override suspend fun editContact(position: Int,modified : String,editposition :Int) {
+        handler.executeNow(useCases.editContact, EditContact.RequestValue(position,modified,editposition))
     }
 
-    override suspend fun favouriteContact(selection: Boolean, i: Int) {
-        handler.executeNow(useCases.favouriteContact, FavouriteContact.RequestValue(selection,i))
+    override suspend fun favouriteContact(selection: Boolean, position: Int) {
+        handler.executeNow(useCases.favouriteContact, FavouriteContact.RequestValue(selection,position))
     }
 }
 

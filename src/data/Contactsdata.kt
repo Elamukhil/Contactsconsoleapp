@@ -20,17 +20,17 @@ object Contactsdata{
         return Result.Success(contacts.filter { it.favourite })
     }
 
-    fun getContacts(i : Int): Result<Contacts, ErrorValue>{
-        return Result.Success(contacts[i])
+    fun getContacts(position : Int): Result<Contacts, ErrorValue>{
+        return Result.Success(contacts[position])
     }
-    fun editContact(i: Int,modified : String,editposition :Int)
+    fun editContact(position: Int,modified : String,editposition :Int)
     {
         when(editposition)
         {
-            1-> contacts[i].name=modified
-            2-> contacts[i].address=modified
-            3-> contacts[i].emailid=modified
-            4-> contacts[i].phone=modified
+            1-> contacts[position].name=modified
+            2-> contacts[position].address=modified
+            3-> contacts[position].emailid=modified
+            4-> contacts[position].phone=modified
         }
     }
 
