@@ -1,12 +1,12 @@
-import data.ContactsData
+import data.ContactsLocalDataService
 import domain.model.Address
 import domain.model.Contact
 import view.contactslist.Printer
 import kotlin.random.Random
 
 suspend fun main(args: Array<String>) {
-    ContactsData.addNewContact(Contact(Random.nextInt(0,1000),"John", Address("233","Nethaji street","Coimbatore","TamilNadu","614003"), "John@gmail.com", mutableListOf("123456"), true))
-    ContactsData.addNewContact(Contact(Random.nextInt(0,1000),"Ram", Address("300","Ramnagar street","Coimbatore","TamilNadu","614045"), "Ram@gmail.com", mutableListOf("123456","567890"), false))
+    ContactsLocalDataService.addNewContact(Contact(Random.nextInt(0,1000),"John", Address("233","Nethaji street","Coimbatore","TamilNadu","614003"), "John@gmail.com", mutableListOf("123456"), true))
+    ContactsLocalDataService.addNewContact(Contact(Random.nextInt(0,1000),"Ram", Address("300","Ramnagar street","Coimbatore","TamilNadu","614045"), "Ram@gmail.com", mutableListOf("123456","567890"), false))
     val presenter = Injection.provideContactPresenter()
     while (true) {
         println(
