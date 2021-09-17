@@ -5,11 +5,11 @@ import domain.base.UseCase
 import domain.base.Result
 
 class FavouriteContact :  UseCase<FavouriteContact.RequestValue, FavouriteContact.ResponseValue, ErrorValue>() {
-    data class RequestValue(val selection : Boolean, val position:Int) : UseCase.RequestValue
+    data class RequestValue(val isFavourite : Boolean, val contactId:Int) : UseCase.RequestValue
     object ResponseValue : UseCase.ResponseValue
 
     override suspend fun executeUseCase(requestValues: RequestValue): Result<ResponseValue, ErrorValue> {
-        data.Contactsdata.favouriteContact(requestValues.selection,requestValues.position)
+        data.ContactsData.favouriteContact(requestValues.isFavourite,requestValues.contactId)
         return Result.Success(ResponseValue)
     }
 

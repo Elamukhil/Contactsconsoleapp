@@ -1,9 +1,8 @@
 package view.contactslist
-import data.Contactsdata
-import domain.model.Contacts
+import domain.model.Contact
 
 object Printer {
-    fun printAllContacts(list: List<Contacts>) {
+    fun printAllContacts(list: List<Contact>) {
         var i=1
         for (contact in list) {
             println("$i."+contact.name)
@@ -11,12 +10,18 @@ object Printer {
         }
     }
 
-    fun printContact(i:Contacts)
+    fun printContact(i:Contact?)
     {
-        println("Name : ${i.name}")
-        println("Address : ${i.address}")
-        println("Emailid : ${i.emailid}")
-        println("Phone : ${i.phone}")
+        println("Name : ${i?.name}")
+        println("Address : ${i?.address}")
+        println("Emailid : ${i?.emailId}")
+        println("Contact number :")
+        var x=1
+        for (j in i?.phone!!)
+        {
+            println("$x) $j")
+            x+=1
+        }
     }
 
 
